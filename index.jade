@@ -1,0 +1,246 @@
+head
+	include header.html
+	link(href='assets/css/foundation.css', rel='stylesheet')
+	link(href='assets/css/styles.css', rel='stylesheet')
+	link(href='assets/js/slick/slick.css', rel='stylesheet')
+	link(href='assets/js/slick/slick-theme.css', rel='stylesheet')
+	script(src='assets/js/jquery.min.js')
+	script(src='assets/js/jquery-ui.min.js')
+	script(src='assets/js/animatescroll.min.js')
+	script(src='assets/js/foundation.min.js')
+	script(src='assets/js/script.js')
+	script(src='assets/js/slick/slick.min.js')
+	title Morgan Dedmon - Front End Developer
+body
+	.top-bar.show-for-small-only
+		button.menu-icon(data-toggle="mobile-menu")
+	.full.reveal#mobile-menu(data-reveal)
+		button.close-button(data-close="", aria-label="Close reveal", type="button")
+			span(aria-hidden="true") &times;
+		ul.vertical.menu
+			li
+				a(href="#wrapper-title" onclick="$('#wrapper-title').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});", data-close="", aria-label="Close reveal") Home
+			li 
+				a(href="#about" onclick="$('#about').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});", data-close="", aria-label="Close reveal") About
+			li 
+				a(href="#skills" onclick="$('#skills').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});", data-close="", aria-label="Close reveal") Skills
+			li 
+				a(href="#projects" onclick="$('#projects').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});", data-close="", aria-label="Close reveal") Projects
+			li 
+				a(href="#contact" onclick="$('#contact').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});", data-close="", aria-label="Close reveal") Contact
+	#wrapper-title.small-12.column
+		header
+			.svg-wrap
+				include assets/img/Morgan.svg
+			//-.title.img-holder
+			//-h1.title Morgan Dedmon
+			h2.subtitle Front-End Developer and User Experience Designer
+	.top-bar.hide-for-small-only
+		.top-bar-left
+			.menu-text.hide-for-medium-only
+				a MD
+		nav
+			ul.dropdown.menu
+				li
+					a(href="#wrapper-title" onclick="$('#wrapper-title').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});") Home
+				li 
+					a(href="#about" onclick="$('#about').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});") About
+				li 
+					a(href="#skills" onclick="$('#skills').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});") Skills
+				li 
+					a(href="#projects" onclick="$('#projects').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});") Projects
+				li 
+					a(href="#contact" onclick="$('#contact').animatescroll({scrollSpeed:2000,easing:'easeInOutBack', padding:150});") Contact
+		a#resume.button.hollow(href="assets/img/MorganDedmonResume.pdf") Resume
+			.ease
+	.section#about
+		.row
+			.small-12.medium-4.column
+				.hexagon(style="background-image: url('assets/img/portrait.jpg') ;")
+			.small-12.medium-8.column.small-centered.medium-uncenter
+				h2 About Me
+				p
+					| I am a versatile Front End Developer located in Dallas, Texas. I am passionate about creating clean, effective interfaces that will delight and engage users and designing simple solutions to complex problems. I have a wide set of skills that spans all areas of the front end development process, from architectural design, UX research, coding, and testing, and have experience collaborating with other disciplines across the full development stack. I am a motivated, adaptive learner and proactively keep my knowledge up to date with the latest technologies and tools.
+	.section#skills
+		.row
+			.medium-12.column
+				h2 Skills and Tools
+		.row
+			.small-12.medium-4.column.text-center
+				ul
+					li
+						h4 Javascript
+					li ReactJS
+					li AngularJS
+					li JQuery
+					li Redux
+					li Express
+			.small-12.medium-4.column.text-center
+				ul
+					li
+						h4 Web
+					li Responsive
+					li Jade/Haml
+					li LESS/SASS
+					li Foundation/Bootstrap
+					li Ruby on Rails
+			.small-12.medium-4.column.text-center
+				ul
+					li
+						h4 UX/UI Tools
+					li User Research
+					li Wireframes
+					li Axure
+					li InVision
+					li Illustrator
+	include assets/img/triangle.svg
+	.section#projects
+		.row
+			.small-12.column
+				h2 Recent Projects
+		.row
+			.small-12.medium-12.large-12.column
+				.project-slider
+					.project-slide
+						a(data-toggle="portfolio4")
+							img.thumbnail(src="assets/img/verizon_logo.png", alt="")
+					.project-slide
+						a(data-toggle="portfolio1")
+							img.thumbnail(src="assets/img/VCCloud.png", alt="")
+					.project-slide
+						a(data-toggle="portfolio2")
+							img.thumbnail(src="assets/img/screen.jpg", alt="")
+					.project-slide
+						a(data-toggle="portfolio3")
+							img.thumbnail(src="assets/img/PonyUpHomepage.png", alt="") 
+
+	.section#contact
+		.row
+			.small-8.small-offset-2.column
+				h2 Contact Me
+		.row
+			.small-12.medium-8.medium-offset-2.column
+				form(name="contact-me", method="post", action="send_form_email.php")
+					label.text-left(for = "nameField") Name
+						input(type="text", name="name")#nameField
+					label.text-left(for = "emailField") Email Address
+						input(type="email", name="email")#emailField
+					label.text-left(for = "subjectField") Subject
+						input(type="text", name="subject")#subjectField
+					label.text-left(for = "messageField", name="message") Message
+						textarea#messageField
+					input.button.hollow.float-center( type="submit", value="Submit")
+	footer.section
+		.row
+			.medium-4.column
+				h2 MORGAN DEDMON
+			.medium-4.column.center
+				p.copyright Copyright 2015 &copy; Morgan Dedmon <br> All Rights Reserved
+			.medium-4.column.text-center.small-centered
+				a.button(href="assets/img/MorganDedmonResume.pdf") Resume
+	.large.reveal#portfolio4(data-reveal)
+		h2 Verizon Rapid Deliver Mobile (Sales 2 Go)
+		h3.subheader Web application for Verizon sales representatives and technicians to be able to manage contracts for the Verizon Rapid Delivery system from tablet or mobile. 
+		button.close-button(data-close="", aria-label="Close reveal", type="button")
+			span(aria-hidden="true") &times;
+		.row
+			.column.small-12.medium-6
+				img.img-responsive(src="assets/img/verizon_logo.png", alt="")
+			.column.small-12.medium-6
+				p This project is a web application for in-the-field Verizon sales representatives and technicians to be able to manage contracts for the Verizon Rapid Delivery system from tablet or mobile. The front-end for this project leverages the most cutting edge trends in JavaScript, built with ReactJS and Redux.
+				p My biggest role on the project was in the design and implemention of a feature called EZStatus, which allows the user to check on the status of Order Requests and Service Orders. In addition to developing the UI for EZStatus, I coordinated with and delagated to several teams for the development of the APIs. I also worked on the implementation of the Push notifications system. 
+				.row
+					.column.small-4.small-offset-2.text-center
+						h4.text-center Process
+						ul
+							li Conceptual Design and Approach Documentation
+							li Preliminary Design Documentation
+							li Implementation
+							li Unit Testing
+					.column.small-4.text-center.end
+						h4.text-center Tools
+						ul
+							li ReactJS
+							li Redux
+							li Webpack
+							li Babel
+							li LESS
+							li PhantomJS
+	.large.reveal#portfolio1(data-reveal)
+		h2 VetCheq Cloud
+		h3.subheader VetCheq Cloud provides a window into your horse's health data and lets you be with your horse no matter where you are 
+		button.close-button(data-close="", aria-label="Close reveal", type="button")
+			span(aria-hidden="true") &times;
+		.row
+			.column.small-12.medium-6
+				.project-modal-slider
+					.project-modal-slide
+							img.thumbnail(src="assets/img/VCCloud.png", alt="")
+					.project-modal-slide
+							img.thumbnail(src="assets/img/Dashboard.png", alt="")
+					.project-modal-slide
+							img.thumbnail(src="assets/img/horses.png", alt="")
+					.project-modal-slide
+							img.thumbnail(src="assets/img/HealthData.png", alt="")
+					.project-modal-slide
+							img.thumbnail(src="assets/img/devices.png", alt="")
+			.column.small-12.medium-6
+				p At PonyUp Technologies, I developed the VetCheq Cloud single page application, which allows users to view the health data collected by their VetCheq remote equine health monitoring device. I was responsible for parts of the full development process, including UX design and prototypes, software architecture design, and coding. During this project, I redesigned the company's previous software architecture in favor of more modern practices using an MVC structure, a RESTful Ruby on Rails API, and a responsive AngularJS based single page front end client. 
+				.row
+					.column.small-4.small-offset-2.text-center
+						h4.text-center Process
+						ul
+							li Requirement Analysis
+							li Wireframes and UX Design
+							li Low Level Prototypes and Mockups 
+							li Code Implementation
+							li Testing
+					.column.small-4.text-center.end
+						h4.text-center Tools
+						ul 
+							li ZURB Foundation for Apps 
+							li AngularJS 
+							li SASS 
+							li Gulp
+							li Consumes a RESTful Rails API
+	.large.reveal#portfolio3(data-reveal)
+		h2 PonyUp Technologies Website 
+		h3.subheader A redesign of PonyUp Technology's website and ecommerce system 
+		button.close-button(data-close="", aria-label="Close reveal", type="button")
+			span(aria-hidden="true") &times;
+		.row
+			.column.small-12.medium-6
+				img.img-responsive(src="assets/img/PonyUpHomepage.png", alt="")
+			.column.small-12.medium-6
+				p This website was a full redesign of PonyUp Technologies corporate website. It was designed in collaboration between myself and a very talented Graphics Designer with content provided to us. It is developed in Wordpress and includes integration with the WooCommerce ecommerce system. I developed a custom child theme based on a theme that best suited the company's CMS needs. This site was developed in a short period of time to help the company quickly begin selling and advertising their products. 
+				.row
+					.column.small-4.small-offset-4.text-center
+						h4.text-center Tools
+						ul 
+							li Wordpress 
+							li WooCommerce
+							li Responsive Design
+	.large.reveal#portfolio2(data-reveal)
+		h2 VetCheq Application
+		h3.subheader A powerful non-invasive Equine health diagnostic tool that brings your horse's health to your fingertips wherever you are
+		button.close-button(data-close="", aria-label="Close reveal", type="button")
+			span(aria-hidden="true") &times;
+		.row
+			.column.small-12.medium-6
+				img.img-responsive(src="assets/img/screen.jpg", alt="")
+			.column.small-12.medium-6
+				p This project is a Java-based application that is meant to stream live equine health data from the VetCheq bluetooth device. I was responsible for the UX design and development of the JavaFX user interface. It communicates via TCIP sockets with a program that interfaces directly with the VetCheq device, allowing veterinarians and other equine professionals to trigger recordings to be taken remotely. 
+				.row
+					.column.small-4.small-offset-2.text-center
+						h4 Process
+						ul
+							li User Research
+							li Wireframes and UX Design
+							li Requirement Gathering and Analysis 
+							li Software Architecture Design
+							li Code Implementation
+					.column.small-4.text-center.end
+						h4 Tools
+						ul
+							li Java
+							li JavaFX
